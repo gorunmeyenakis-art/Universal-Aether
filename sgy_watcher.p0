@@ -1,0 +1,21 @@
+import requests
+import time
+import ospython sgy_watcher.py
+
+
+def check_athene():
+    url = "https://athene.network"
+    zaman = time.strftime("%H:%M:%S")
+    try:
+        r = requests.get(url, timeout=10)
+        if r.status_code == 200:
+            print(f"[{zaman}] 📡 ISTIHBARAT: Sunucu cevap veriyor! Kapılar açılmış olabilir.")
+        else:
+            print(f"[{zaman}] 🚫 DURUM: Bakım devam ediyor...")
+    except:
+        print(f"[{zaman}] ⚠️ HATA: Sığınak dış dünya ile bağlantı kuramadı.")
+
+print("--- SGY-BUNKER GÖZCÜSÜ AKTİF ---")
+while True:
+    check_athene()
+    time.sleep(60) # Her 60 saniyede bir kontro
