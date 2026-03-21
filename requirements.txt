@@ -1,0 +1,7 @@
+# Requirements for Universal Aether
+
+# Built-in Python libraries
+# time
+# os
+
+# Add your external dependencies below:
